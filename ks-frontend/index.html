@@ -14,8 +14,8 @@
   <script src="https://cdn.jsdelivr.net/p5.gif.js/latest/mainfile">
 
   </script>
-  <script src="lib/p5.play.js" charset="utf-8"></script>
-  <script src="lib/p5.collide2d.js" charset="utf-8"></script>
+  <script src="/public/lib/p5.play.js" charset="utf-8"></script>
+  <script src="/public/lib/p5.collide2d.js" charset="utf-8"></script>
 
   <link rel="stylesheet" href="assets/styles.css">
   <title>killshemar</title>
@@ -39,14 +39,19 @@
   <div id="loader" onload="randombg()" />
 
 
+  <script>
+    socket = io();
+  </script>
+
+  <script src="/public/variables.js"></script>
+  <script src="./public/helpers.js"></script>
+  <script src="./public/scoreAdaptor.js"></script>
+  <script src="./public/platform.js"></script>
+  <script src="./public/index.js"></script>
+  <script src="./public/canvas.js"></script>
+
 </body>
 
-<script src="src/variables.js"></script>
-<script src="src/helpers.js"></script>
-<script src="src/scoreAdaptor.js"></script>
-<script src="src/platform.js"></script>
-<script src="src/index.js"></script>
-<script src="src/canvas.js"></script>
 
 
 

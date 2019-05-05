@@ -1,25 +1,21 @@
 'use strict';
 
 const express = require('express');
-const socketIO = require('socket.io');
 const path = require('path');
 
+
+const socketIO = require('socket.io');
 const PORT = process.env.PORT || 8000;
+
 const INDEX = path.join(__dirname, 'index.html');
 
 const server = express()
+  .use(express.static(__dirname + 'public'))
   .use((req, res) => res.sendFile(INDEX))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-const io = socketIO(server);
 
-// Heroku won't actually allow us to use WebSockets
-// so we have to setup polling instead.
-// https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
+const io = socketIO(server);
 
 
 //  initalliy setting both players to false, meaning they arent set yet
