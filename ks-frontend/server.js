@@ -50,7 +50,7 @@ io.on('connection', (socket) => {
     // set it to false when they leave
     hasShip = false;
     hasShemar = false;
-    socket.emit('team', 'shemar')
+
     playerIndex--
 
     console.log("user left! " + playerIndex + " left")
